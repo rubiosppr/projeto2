@@ -64,7 +64,7 @@ function navigateToGame(game) {
       alert("Bem-vindo ao Jogo da Média!");
 
       let quantidade2 = prompt("Quantos números você quer digitar?");
-      quantidade = Number(quantidade);
+      quantidade2 = Number(quantidade2);
 
       if (
         quantidade2 <= 0 ||
