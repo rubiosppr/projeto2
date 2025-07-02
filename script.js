@@ -1,4 +1,4 @@
-function numeroAleatorio() {
+function numeroSecreto() {
       alert("Seja bem-vindo ao nosso jogo!");
 
       let numeroSecreto = 5;
