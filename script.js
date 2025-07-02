@@ -62,7 +62,7 @@ function numeroSecreto() {
       alert("Bem-vindo ao Jogo da Média!");
 
       let quantidade = prompt("Quantos números você quer digitar?");
-      quantidade = Number(quantidade2);
+      quantidade = Number(quantidade);
 
       if (
         quantidade <= 0 ||
