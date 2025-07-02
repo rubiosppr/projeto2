@@ -1,85 +1,56 @@
 function numeroSecreto() {
-      alert("Seja bem-vindo ao nosso jogo!");
+  alert("Seja bem-vindo ao nosso jogo!");
 
-      let numeroSecreto = 5;
+  let numeroSecreto = 5;
 
-      let chute;
-      let tentativas = 0;
+  let chute;
+  let tentativas = 0;
 
-      while (chute != numeroSecreto) {
-        chute = parseInt(prompt("Escolha um número entre 1 e 10"));
-        tentativas++;
+  while (chute != numeroSecreto) {
+    chute = parseInt(prompt("Escolha um número entre 1 e 10"));
+    tentativas++;
 
-        if (chute == numeroSecreto) {
-          alert(
-            `Parabéns! Você acertou o número secreto ${numeroSecreto} na tentativa ${tentativas}.`
-          );
-        } else if (chute > numeroSecreto) {
-          alert(`O número secreto é menor que ${chute}. Tente novamente.`);
-        } else {
-          alert(`O número secreto é maior que ${chute}. Tente novamente.`);
-        }
-      }
+    if (chute == numeroSecreto) {
+      alert(
+        `Parabéns! Você acertou o número secreto ${numeroSecreto} na tentativa ${tentativas}.`
+      );
+    } else if (chute > numeroSecreto) {
+      alert(`O número secreto é menor que ${chute}. Tente novamente.`);
+    } else {
+      alert(`O número secreto é maior que ${chute}. Tente novamente.`);
     }
-    function jogoSoma() {
-      alert("Bem-vindo ao Jogo da Soma!");
+  }
+}
+function formulario() {
+  window.location.href = "formulário/index.html";
+}
 
-      let quantidade = prompt("Quantos números você quer digitar?");
-      quantidade = Number(quantidade);
+function jogoMedia() {
+  alert("Bem-vindo ao Jogo da Média!");
 
-      if (
-        quantidade <= 0 ||
-        quantidade === null ||
-        quantidade === "" ||
-        typeof quantidade !== "number"
-      ) {
-        alert(
-          "Quantidade inválida. Tente novamente com um número maior que zero."
-        );
-      } else {
-        let soma = 0;
+  let quantidade = prompt("Quantos números você quer digitar?");
+  quantidade = Number(quantidade);
 
-        for (let i = 1; i <= quantidade; i++) {
-          let entrada = prompt(`Digite o ${i}º número:`);
-          let numero = Number(entrada);
+  if (!Number.isFinite(quantidade) || quantidade <= 0) {
+    alert("Quantidade inválida. Tente novamente com um número maior que zero.");
+  } else {
+    let soma = 0;
 
-          if (entrada.trim() === "" || entrada === null || isNaN(numero)) {
-            alert("Valor inválido. Digite um número.");
-            i--;
-            continue;
-          }
-
-          soma += numero;
-        }
-        alert(
-          `A soma calculada dos ${quantidade} números digitados é: ${soma.toFixed(
-            2
-          )}`
-        );
+    for (let i = 1; i <= quantidade; i++) {
+      let entrada = prompt(`Digite o ${i}º número:`);
+      if (entrada === null || entrada.trim() === "" || isNaN(Number(entrada))) {
+        alert("Valor inválido. Digite um número.");
+        i--;
+        continue;
       }
-     }
-    function jogoMedia() {
-      alert("Bem-vindo ao Jogo da Média!");
-
-      let quantidade = prompt("Quantos números você quer digitar?");
-      quantidade = Number(quantidade);
-
-      if (!Number.isFinite(quantidade) || quantidade <= 0) {
-        alert("Quantidade inválida. Tente novamente com um número maior que zero.");
-      } else {
-        let soma = 0;
-
-        for (let i = 1; i <= quantidade; i++) {
-          let entrada = prompt(`Digite o ${i}º número:`);
-          if (entrada === null || entrada.trim() === "" || isNaN(Number(entrada))) {
-            alert("Valor inválido. Digite um número.");
-            i--;
-            continue;
-          }
-          soma += Number(entrada);
-        }
-
-        let media = soma / quantidade;
-        alert(`A média calculada entre os ${quantidade} números digitados é: ${media.toFixed(2)}`);
-      }
+      soma += Number(entrada);
     }
+
+    let media = soma / quantidade;
+    alert(
+      `A média calculada entre os ${quantidade} números digitados é: ${media.toFixed(
+        2
+      )}`
+    );
+  }
+}
