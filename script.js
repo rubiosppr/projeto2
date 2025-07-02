@@ -25,7 +25,7 @@ function jogoSoma() {
   let num1 = parseInt(prompt("Digite o primeiro número:"));
   let num2 = parseInt(prompt("Digite o segundo número:"));
   let resultado = num1 + num2;
-  alert(`A soma de ${num1} e ${num2} é: ${resultado}`);
+   alert("A soma dos números é: " + resultado);
 }
 
 function jogoMedia() {
