@@ -1,6 +1,4 @@
-function navigateToGame(game) {
-  switch (game) {
-    case "numeroSecreto":
+function numeroAleatorio() {
       alert("Seja bem-vindo ao nosso jogo!");
 
       let numeroSecreto = 5;
@@ -22,8 +20,8 @@ function navigateToGame(game) {
           alert(`O número secreto é maior que ${chute}. Tente novamente.`);
         }
       }
-      break;
-    case "somaNumeros":
+    }
+    function jogoSoma() {
       alert("Bem-vindo ao Jogo da Soma!");
 
       let quantidade = prompt("Quantos números você quer digitar?");
@@ -59,18 +57,18 @@ function navigateToGame(game) {
           )}`
         );
       }
-      break;
-    case "mediaAritmetica":
+     }
+    function jogoMedia() {
       alert("Bem-vindo ao Jogo da Média!");
 
-      let quantidade2 = prompt("Quantos números você quer digitar?");
-      quantidade2 = Number(quantidade2);
+      let quantidade = prompt("Quantos números você quer digitar?");
+      quantidade = Number(quantidade2);
 
       if (
-        quantidade2 <= 0 ||
-        quantidade2 === null ||
-        quantidade2 === "" ||
-        typeof quantidade2 !== "number"
+        quantidade <= 0 ||
+        quantidade === null ||
+        quantidade === "" ||
+        typeof quantidade !== "number"
       ) {
         alert(
           "Quantidade inválida. Tente novamente com um número maior que zero."
@@ -78,7 +76,7 @@ function navigateToGame(game) {
       } else {
         let soma = 0;
 
-        for (let i = 1; i <= quantidade2; i++) {
+        for (let i = 1; i <= quantidade; i++) {
           let entrada = prompt(`Digite o ${i}º número:`);
           let numero = Number(entrada);
 
@@ -91,16 +89,12 @@ function navigateToGame(game) {
           soma += numero;
         }
 
-        let media = soma / quantidade2;
+        let media = soma / quantidade;
 
         alert(
-          `A média calculada entre os ${quantidade2} números digitados é: ${media.toFixed(
+          `A média calculada entre os ${quantidade} números digitados é: ${media.toFixed(
             2
           )}`
         );
       }
-      break;
-    default:
-      alert("Exemplo não encontrado!");
-  }
-}
+    }
