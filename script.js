@@ -34,22 +34,31 @@ function jogoMedia() {
   let quantidade = prompt("Quantos números você quer digitar?");
   quantidade = Number(quantidade);
 
-  if (!Number.isFinite(quantidade) || quantidade <= 0) {
+  if (
+    quantidade <= 0 ||
+    quantidade === null ||
+    quantidade === "" ||
+    typeof quantidade !== "number"
+  ) {
     alert("Quantidade inválida. Tente novamente com um número maior que zero.");
   } else {
     let soma = 0;
 
     for (let i = 1; i <= quantidade; i++) {
       let entrada = prompt(`Digite o ${i}º número:`);
-      if (entrada === null || entrada.trim() === "" || isNaN(Number(entrada))) {
+      let numero = Number(entrada);
+
+      if (entrada.trim() === "" || entrada === null || isNaN(numero)) {
         alert("Valor inválido. Digite um número.");
         i--;
         continue;
       }
-      soma += Number(entrada);
+
+      soma += numero;
     }
 
     let media = soma / quantidade;
+
     alert(
       `A média calculada entre os ${quantidade} números digitados é: ${media.toFixed(
         2
